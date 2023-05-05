@@ -12,6 +12,7 @@ class TicketPage extends StatefulWidget {
 
 class _TicketPageState extends State<TicketPage> {
   int _index = 0;
+  bool light = true;
 
   @override
   Widget build(BuildContext context) {
@@ -155,10 +156,11 @@ class _TicketPageState extends State<TicketPage> {
                                 children: [
                                   Text(
                                       style: TextStyle(
-                                          fontSize: 12.0,
-                                          fontFamily: 'Outfit'
+                                        fontSize: 11.0,
+                                        fontFamily: 'Outfit',
+                                        color: DesignSystem.gray
                                       ),
-                                      textAlign: TextAlign.center,
+                                      textAlign: TextAlign.left,
                                       "Resposta do atendente."
                                   ),
                                   SizedBox(
@@ -166,13 +168,44 @@ class _TicketPageState extends State<TicketPage> {
                                   ),
                                   Expanded(
                                     flex: 1,
-                                    child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante enim, pretium non sapien quis, sagittis condimentum neque.")
+                                    child: Text(
+                                        style: TextStyle(
+                                            fontSize: 12.0,
+                                            fontFamily: 'Outfit'
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante enim, pretium non sapien quis, sagittis condimentum neque"
+                                    ),
                                   )
                                 ],
                               )
+                            ),
+                            Row(
+                              children: [
+                                Switch(
+                                  // This bool value toggles the switch.
+                                  value: light,
+                                  activeColor: DesignSystem.blue,
+                                  onChanged: (bool value) {
+                                    // This is called when the user toggles the switch.
+                                    setState(() {
+                                      light = value;
+                                    });
+                                  },
+                                ),
+                                Text(
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontFamily: 'Outfit',
+                                      color: DesignSystem.blue
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    "Este ticket foi resolvido?"
+                                ),
+                              ],
                             )
                           ]
-                      )
+                      ),
                   )
               )
           )

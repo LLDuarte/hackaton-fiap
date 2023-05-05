@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackaton_fiap_etapa2/design_system.dart';
+import 'package:hackaton_fiap_etapa2/src/pages/structures/basic_structure_default_bar.dart';
 
-import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   static const String id = 'login';
@@ -168,7 +168,12 @@ class _LoginPageState extends State<LoginPage> {
                                   width: double.infinity,
                                   child: ElevatedButton(
                                     onPressed: () {
-                                      Navigator.pushReplacementNamed(context, HomePage.id);
+                                      Navigator.pushReplacementNamed(
+                                          context,
+                                          BasicStructureDefaultBar.id,
+                                          arguments: BasicStructureDefaultBarArguments(
+                                              page: 0
+                                          ));
                                     },
                                     style: ElevatedButton.styleFrom(
                                         primary: DesignSystem.blue,

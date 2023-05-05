@@ -6,10 +6,19 @@ import 'package:hackaton_fiap_etapa2/src/pages/new_ticket_page.dart';
 import '../../../design_system.dart';
 import '../tickets_page.dart';
 
+class BasicStructureDefaultBarArguments {
+  BasicStructureDefaultBarArguments ({
+    this.page
+  });
+
+  int? page;
+}
+
 class BasicStructureDefaultBar extends StatefulWidget {
   static String id = "home";
+  final BasicStructureDefaultBarArguments? arguments;
 
-  BasicStructureDefaultBar({Key? key}) : super(key: key);
+  BasicStructureDefaultBar({Key? key, this.arguments}) : super(key: key);
 
   @override
   _BasicStructureDefaultBarState createState() => _BasicStructureDefaultBarState();
@@ -21,7 +30,7 @@ class _BasicStructureDefaultBarState extends State<BasicStructureDefaultBar> {
   @override
   initState() {
     super.initState();
-    _selectedIndex = 0;
+    _selectedIndex = widget.arguments?.page ?? 0;
   }
 
   onItemTapped(int index) {

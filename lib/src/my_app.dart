@@ -23,8 +23,9 @@ class _MyAppState extends State<MyApp> {
       initialRoute: LoginPage.id,
       routes: {
         LoginPage.id: (context) => const LoginPage(),
-        BasicStructureDefaultBar.id: (context)  => BasicStructureDefaultBar(),
-        NewTicketPage.id: (context)  => const NewTicketPage(),
+        BasicStructureDefaultBar.id: (context) => BasicStructureDefaultBar(
+            arguments: ModalRoute.of(context)?.settings.arguments as BasicStructureDefaultBarArguments
+        ),        NewTicketPage.id: (context)  => const NewTicketPage(),
         TicketPage.id: (context)  => const TicketPage(),
         // MoviesScreen.id: (context) => const MoviesScreen(),
       },

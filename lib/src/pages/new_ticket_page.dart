@@ -18,6 +18,7 @@ class _NewTicketPageState extends State<NewTicketPage> {
     return SafeArea(
       child: Scaffold(
         extendBody: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           titleSpacing: 0,
@@ -105,7 +106,7 @@ class _NewTicketPageState extends State<NewTicketPage> {
                               return null;
                             },
                           ),
-                          SizedBox(height: 20.0),
+                          const SizedBox(height: 20.0),
                           TextFormField(
                             decoration: InputDecoration(
                               focusedBorder: OutlineInputBorder(
@@ -140,8 +141,10 @@ class _NewTicketPageState extends State<NewTicketPage> {
                               return null;
                             },
                           ),
-                          SizedBox(height: 20.0),
+                          const SizedBox(height: 20.0),
                           TextFormField(
+                            keyboardType: TextInputType.multiline,
+                            maxLines: null,
                             decoration: InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: DesignSystem.blue),
@@ -161,7 +164,7 @@ class _NewTicketPageState extends State<NewTicketPage> {
                               ),
                               filled: true,
                               fillColor: DesignSystem.white,
-                              hintText: 'Número do pedido...',
+                              hintText: 'Descreva brevemente o que aconteceu. Logo um\n de nossos atendentes resolverá seu problema...',
                               hintStyle: TextStyle(
                                   fontSize: 14.0,
                                   color: DesignSystem.gray,
@@ -174,6 +177,52 @@ class _NewTicketPageState extends State<NewTicketPage> {
                               }
                               return null;
                             },
+                          ),
+                          const SizedBox(height: 20.0),
+                          InkWell(
+                            onTap: () {
+                              print("Você incluirá fotos");
+                            },
+                            child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: const BorderRadius.all(Radius.circular(8)),
+                                ),
+                                width: double.infinity,
+                                alignment: Alignment.topLeft,
+                                padding: const EdgeInsets.all(20.0),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.cloud_upload_outlined,
+                                      size: 48.0,
+                                      color: DesignSystem.mediumGray
+                                    ),
+                                    const SizedBox(width: 25.0),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                            style: TextStyle(
+                                                fontSize: 15.0,
+                                                fontFamily: 'Outfit',
+                                                color: DesignSystem.mediumGray
+                                            ),
+                                            "Adicionar fotos"
+                                        ),
+                                        Text(
+                                            style: TextStyle(
+                                                fontSize: 12.0,
+                                                fontFamily: 'Outfit',
+                                                color: DesignSystem.mediumGray
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            "Tamanho máximo 10 MB, 5 fotos"
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                )
+                            ),
                           ),
                         ],
                       ),

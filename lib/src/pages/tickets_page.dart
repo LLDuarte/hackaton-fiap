@@ -31,7 +31,7 @@ class _TicketsPageState extends State<TicketsPage> {
                           fontFamily: 'Outfit'
                       ),
                       textAlign: TextAlign.center,
-                      "7 Tickets"
+                      "4 Tickets"
                   ),
                   const SizedBox(height: 22.0),
                   Expanded(
@@ -40,7 +40,7 @@ class _TicketsPageState extends State<TicketsPage> {
                     separatorBuilder: (BuildContext context, int index) {
                       return const Divider();
                     },
-                    itemCount: 3,
+                    itemCount: 4,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {

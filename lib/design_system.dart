@@ -7,6 +7,7 @@ class DesignSystem {
   static Color green = const Color(0xFF00B383);
   static Color red = const Color(0xFFEA6B6B);
   static Color gray = const Color(0xFF69695D);
+  static Color mediumGray = const Color(0xFF707070);
 
   static Color darkBlue = const Color(0xFF293558);
   static Color lightBlue = const Color(0xFF163592);

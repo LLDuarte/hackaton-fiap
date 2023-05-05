@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackaton_fiap_etapa2/design_system.dart';
+import 'package:hackaton_fiap_etapa2/src/pages/structures/basic_structure_default_bar.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = 'home';
@@ -45,7 +46,12 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       InkWell(
                         onTap: () {
-                          print("teste");
+                          Navigator.pushReplacementNamed(
+                              context,
+                              BasicStructureDefaultBar.id,
+                              arguments: BasicStructureDefaultBarArguments(
+                                  page: 1
+                              ));
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -83,7 +89,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                       InkWell(
                         onTap: () {
-                          print("teste");
+                          Navigator.pushReplacementNamed(
+                              context,
+                              BasicStructureDefaultBar.id,
+                              arguments: BasicStructureDefaultBarArguments(
+                                  page: 1
+                              ));
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -121,7 +132,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                       InkWell(
                         onTap: () {
-                          print("teste");
+                          Navigator.pushReplacementNamed(
+                              context,
+                              BasicStructureDefaultBar.id,
+                              arguments: BasicStructureDefaultBarArguments(
+                                  page: 1
+                              ));
                         },
                         child: Container(
                           decoration: BoxDecoration(
